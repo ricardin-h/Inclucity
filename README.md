@@ -48,9 +48,9 @@ Usuários que necessitam de anonimato
 
 Oferecer ferramentas para gestores e atendentes:
 
-Priorização de demandas
 Organização por categoria, bairro e urgência
 Registro de histórico e rastreabilidade
+
 ⚙️ Funcionalidades Principais
 Cadastro de solicitações com categoria, descrição e localização
 Opção de envio anônimo ou identificado
