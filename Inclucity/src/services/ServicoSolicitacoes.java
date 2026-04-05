@@ -15,7 +15,7 @@ public class ServicoSolicitacoes {
 
 
     //CRIAR SOLICITAÇÕES
-    public Solicitacao criarSolicitacao(String categoria, String descricao, String bairro, boolean anonimo) {
+    public Solicitacao criarSolicitacao(String categoria, String descricao, String bairro, String rua, String estabelecimento, boolean anonimo) {
         if (categoria == null || categoria.isBlank()) {
             //CASO DADOS ESTEJAM INCORRETOS IMPRIME AVISO
             throw new IllegalArgumentException("Categoria inválida");
@@ -30,11 +30,23 @@ public class ServicoSolicitacoes {
             //CASO DADOS ESTEJAM INCORRETOS IMPRIME AVISO
             throw new IllegalArgumentException("Bairro inválido");
         }
+
+        if (rua == null || rua.isBlank()) {
+            throw new IllegalArgumentException("Rua inválida");
+        }
+
+        if (estabelecimento  == null || estabelecimento .isBlank()) {
+            throw new IllegalArgumentException("Estabelecimento inválida");
+        }
+
+
         Solicitacao solicitacao = new Solicitacao(
                 contadorProtocolo++,
                 categoria,
                 descricao,
                 bairro,
+                rua,
+                estabelecimento,
                 anonimo
         );
 

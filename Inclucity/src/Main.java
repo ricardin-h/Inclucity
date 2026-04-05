@@ -3,6 +3,7 @@ import models.Solicitacao;
 import services.ServicoSolicitacoes;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -38,10 +39,18 @@ public class Main {
                     System.out.println(" Bairro: ");
                     String bairro = sc.nextLine();
 
-                    System.out.println(" Anonimo (true/false): ");
-                    boolean anonimo = sc.nextBoolean();
+                    System.out.println(" Rua: ");
+                    String rua = sc.nextLine();
 
-                    Solicitacao s = service.criarSolicitacao(categoria, descricao, bairro, anonimo);
+                    System.out.println(" Estabelecimento: ");
+                    String estabelecimento = sc.nextLine();
+
+                    System.out.println(" Deseja ser anônimo : (sim ou não): ");
+                    String resposta = sc.nextLine().toLowerCase();
+
+                    boolean anonimo = resposta.equals("sim");
+
+                    Solicitacao s = service.criarSolicitacao(categoria, descricao, bairro, rua, estabelecimento, anonimo);
                     System.out.println(" Criando com protocolo: " + s.getProtocolo());
                     break;
 
