@@ -84,6 +84,10 @@ public class Main {
 
                     service.adicionarComentario(protocloComentario, comentario);
                     break;
+
+                case 0:
+                    System.out.println(" Saindo! ");
+                    break;
             }
         }while(opcao != 0);
         sc.close();
