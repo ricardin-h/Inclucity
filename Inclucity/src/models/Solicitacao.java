@@ -2,6 +2,10 @@ package models;
 
 import enums.Status;
 
+import java.util.ArrayList;
+import java.util.List;
+
+//SOLICITAÇÃO DE UM CIDADÃO
 public class Solicitacao {
 
     private int protocolo;
@@ -11,15 +15,28 @@ public class Solicitacao {
     private Status status;
     private boolean anonimo;
 
+    private List<String> comentarios = new ArrayList<>();
+
+    //LISTA DE COMENTÁRIOS, REGISTRADOS DURANTE O ATENDIMENTO
+    public void adicionarComentario(String comentario) {
+        comentarios.add(comentario);
+    }
+
+    //CRIA SOLICITAÇÃO COM STATUS ABERTO
     public Solicitacao(int protocolo, String categoria, String descricao, String bairro, boolean anonimo) {
         this.protocolo = protocolo;
         this.categoria = categoria;
         this.descricao = descricao;
         this.bairro = bairro;
         this.anonimo = anonimo;
-        this.status = Status.ABERTO; // começa sempre como ABERTO
+        this.status = Status.ABERTO; // COMEÇA SEMPRE COMO ABERTO
     }
 
+    public List<String> getComentarios() {
+        return comentarios;
+    }
+
+    //GETTERS E SETTERS
     public int getProtocolo() {
         return protocolo;
     }
@@ -74,6 +91,7 @@ public class Solicitacao {
                 " | Categoria: " + categoria +
                 " | Status: " + status.getDescricao() +
                 " | Bairro: " + bairro +
-                (anonimo ? " | Anônimo" : " | Identificado");
+                (anonimo ? " | Anônimo" : " | Identificado") +
+                " | Comentários: " + comentarios;
     }
 }
