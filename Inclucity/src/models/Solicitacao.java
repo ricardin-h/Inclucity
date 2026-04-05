@@ -105,6 +105,7 @@ public class Solicitacao {
                 " | Bairro: " + bairro +
                 " | Rua : " + rua +
                 " | Estabelecimento : " + estabelecimento +
+                " | Descrição : " + descricao +
                 (anonimo ? " | Anônimo" : " | Identificado") +
                 " | Comentários: " + comentarios;
     }
